@@ -1,21 +1,20 @@
-<!DOCTYPE html> 
-<html lang='PT-BR'> 
+<!DOCTYPE html>
+<html lang='PT-BR'>
 	<head>
 		<meta charset='UTF-8'>
 		<link rel='stylesheet' type='text/css' href='style.css'>
+		<script type="text/javascript" src="index.js"></script>
 
-		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>		
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
 		<link href="https://fonts.googleapis.com/css?family=Oleo+Script" rel="stylesheet">
-
-
 
 		<title>Gamux</title>
 		<link rel='shortcut icon' type='image/png' href='./img/favicon.png'/>
 
-	</head> 
+	</head>
 
 	<body>
-		<header id='header'>
+		<header id='header'><!--Menu lateral -->
 			<center>
 
 				<a href='index.html'>
@@ -64,61 +63,66 @@
 
 			</center>
 		</header>
+		<div id='topbar'>
+			<a href='index.html'>
+				<img src='./img/logoWhiteText.png' height="50px" style='filter: brightness(75%);'>
+			</a>
+			<a href='index.html'>
+				<img src='./img/menu_icon.png' height="50px" style='filter: brightness(75%); float: right;'>
+			</a>
+		</div>
 		<div id='content_container'>
-			<iframe width='100%' height='100%' src='https://www.youtube.com/embed/-gA4khniEnM?controls=0&showinfo=0&rel=0&autoplay=1&loop=1&playlist=-gA4khniEnM&color=white' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
+			<iframe id='youtube_embed' width='100%' height='100%' src='https://www.youtube.com/embed/-gA4khniEnM?controls=0&showinfo=0&rel=0&autoplay=1&loop=0&playlist=-gA4khniEnM&color=white' frameborder='0' allow='autoplay; encrypted-media' allowfullscreen></iframe>
 
 			<div class='page_content'>
-				<center><h1>O que somos?</h1></center>
+				<h1>O que somos?</h1>
 
 				<p style="margin-left: 16px; padding-left: 16px; border-left: solid darkcyan;">
 					<font size="4">
 						O <b>Gamux</b> é um grupo de <i>pesquisa e desenvolvimento de jogos</i> organizado pelos próprios estudantes com sedes na Unicamp, PUC Campinas e Facamp.<br><br>
-						
+
 						Nosso objetivo é prover suporte à comunidade de <b>desenvolvedores e cultura de jogos</b> nas universidades da região de Campinas desenvolvendo jogos, projetos de pesquisa e sediando game jams e palestras relacionadas à área.
 
 					</font>
 				</p>
 				<br><br>
 
-				
-                <center><h1>Onde nos encontrar?</h1></center>
+
+                <h1>Onde nos encontrar?</h1>
 				<p>
 					<div class='table_container'>
 						<table style="	text-align: center;">
 							<tr>
-								<th style='min-width: 150px'>
+								<th>
 									<img src='./img/projetos.png' style='filter: brightness(65%);'>
 									<h3>Desenvolvimento</h3>
-                                    <b>Quartas-feiras das 12h às 14h<br>Sala 302 do Instituto de Computação da Unicamp</b><br><br>
-                                    Desenvolvimento dos jogos em andamento no grupo.
-                                </th>
-
-								<th style='min-width: 150px'>
+                        <b>Quartas-feiras das 12h às 14h<br>Sala 302 do Instituto de Computação da Unicamp</b><br><br>
+                          Desenvolvimento dos jogos em andamento no grupo.
+                </th>
+								<th>
 									<img src='./img/eventos.png' style='filter: brightness(65%);'>
 									<h3>Reunião semanal</h3>
 									<b>Quartas-feiras das 17h45 às 18h45<br>Sala 353 do Instituto de Computação da Unicamp</b><br><br>
 									Reunião aberta para todos os públicos para discutir o andamento das atividades do grupo.
 								</th>
-                                
-                                <th style='min-width: 150px'>
-                                <img src='./img/whatsapp-logo.png' style='filter: brightness(65%);'>
-
-                                    <h3>Chat do Gamux</h3>
-                                    Entre para o nosso <a href='https://bit.ly/2tlvK5X'>grupo de Whatsapp</a>. Aberto para discussões na área de jogos.
-                                </th>
+                <th>
+                    <img src='./img/whatsapp-logo.png' style='filter: brightness(65%);'>
+                    <h3>Chat do Gamux</h3>
+                    Entre para o nosso <a href='https://bit.ly/2tlvK5X'>grupo de Whatsapp</a>. Aberto para discussões na área de jogos.
+                </th>
 							</tr>
 						</table>
 					</div>
 				</p>
 				<br><br><br>
-				
+
 				<center><h1>Próximos eventos</h1></center>
 				<p>
 					<div class='table_container'>
 
                         <table>
                             <tr>
-                                <th style='max-width: 150px'>
+                                <th>
                                     <h3><center>Meeting Jam 2018</center></h3>
                                     <img src='./img/destaques/meeting.jpg' width='100%'><br>
                                     <b>Data: 13/04 às 19h até 14/04 às 19h<br>Local: Prédio IC3.5 do Instituto de Computação da Unicamp</b><br><br>
@@ -132,25 +136,25 @@
 				</p>
 				<br><br><br>
 
-				
+
 				<center><h1>Notícias</h1></center>
 
 				<p>
 					<div class='table_container'>
 						<table>
 							<tr>
-                                <th style='min-width: 250px'>
+                <th>
 									<h3><center>Global Game Jam 2018</center></h3>
 									<img src='./img/destaques/ggj18.jpg' width='100%'>
 									Nos dias 26, 27 e 28 de janeiro, o Gamux sediou mais uma edição da Global Game Jam em parceria com o Microsoft Innovation Center de Campinas! Contamos com mais de 80 participantes, jogos incríveis e encerramos o evento com um bolo de aniversário comemorando os 10 anos de Global Game Jam! <a href='https://www.youtube.com/watch?v=4XRYpnasWgE'>Veja aqui a apresentação final.</a>
 								</th>
-								<th style='min-width: 250px'>
+								<th>
 									<h3><center>Gamux no Encontro de Desenvolvedores de Jogos</center></h3>
 									<img src='./img/destaques/metrocamp.jpg' width='100%'>
 									Dia 17 de fevereiro, o Gamux esteve no <a href='https://www.facebook.com/events/384633948627990/'>I Encontro de Desenvolvedores de Jogos da Devry Metrocamp</a> palestrando sobre a experiência de se desenvolver jogos durante a graduação, e as possibilidades de construção de portfólio.
 								</th>
 
-								<th style='min-width: 250px'>
+								<th>
 									<h3><center>Recepção dos calouros da Unicamp</center></h3>
 									<img src='./img/destaques/bixos.jpeg' width='100%'>
 									Dia 15 de março a sede da Unicamp realizou uma palestra para recepcionar os calouros dos cursos de Ciência e Engenharia de Computação da Unicamp explicando toda a organização, projetos e pesquisas do Gamux.
@@ -160,19 +164,19 @@
 					</div>
 				</p>
 				<br><br><br>
-				<center><h1>Unidades</h1></center>
-				
-				
-				
+				<h1>Unidades</h1>
 				<p>
 					<div class='table_container'>
 						<table>
 							<tr>
-								<th width='20%; vertical-align: center;'>
-									<img src="./img/parcerias/unicamp.png" width='auto'>
+								<th>
+									<img class="unidades" src="./img/parcerias/unicamp.png" width='auto'>
 								</th>
-								<th width='20%; vertical-align: center;'>
-									<img src="./img/parcerias/pucc.png" width='auto'>
+								<th>
+									<img class="unidades" src="./img/parcerias/pucc.png" width='auto'>
+								</th>
+								<th>
+									<img class="unidades" src="./img/parcerias/facamp.jpg" width='auto'>
 								</th>
 							</tr>
 						</table>
