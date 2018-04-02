@@ -57,21 +57,45 @@ th
 	z-index: 10;
 }
 
+#dropDownMenu
+{
+	display: none;
+	text-align: center;
+}
+
 #header .menu ul
 {
 	list-style-type: none;
 	display: inline-block;
-
 	padding: 40px 0;
-
 	font-size: 14px;
+}
+
+#dropDownMenu ul
+{
+	list-style-type: none;
+	display: inline-block;
+	font-size: 14px;
+	text-decoration: none;
+	width: 100%;
+	padding: 0;
+	padding-bottom: 5px;
 }
 
 #header .menu li
 {
 	padding: 4px 12px;
 	transition: 0.5s;
-	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+#dropDownMenu li
+{
+	margin-top: 5px;
+	transition: 0.5s;
+	background: darkcyan;
+	color:#eee;
+	width: 100;
 }
 
 #header .menu a li
@@ -94,7 +118,7 @@ th
 	transition: 0.3s;
 }
 
-#header .social_media
+.social_media
 {
     position: absolute;
     bottom: 25px;
@@ -125,6 +149,9 @@ th
 	overflow: hidden;
 	margin-left: auto;
 	margin-right: auto;
+	padding-left: auto;
+	padding-right: auto;
+	display: block;
 }
 
 .page_content table th
@@ -142,9 +169,14 @@ th
 	display: none;/*invisble until mobile devices need it*/
 	background-color: #111;
 	width: 100%;
-	height: 50px;
+	min-height: 50px;
 	z-index: 10;
 	position: fixed;
+}
+
+#ytplayer
+{
+	height: 80%;
 }
 
 /*For Smartphones*/
@@ -162,6 +194,10 @@ th
 	{
 		left: 0;
 		top: 50px;
+	}
+	#ytplayer
+	{
+		height: 33%;
 	}
 }
 

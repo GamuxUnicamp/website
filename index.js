@@ -1,8 +1,16 @@
 //Function to execute just after page is loaded
 function ready(){
-  setTimeout(function () {//make embed video disapear after it's over(56 seconds)
-    document.getElementById('youtube_embed').remove();
-  }, 56000);//56 seconds
+  console.log("ready()")
   //other stuff to do as soon as page loads goes here
 }
 window.onload = ready;
+
+function menuClick(){
+  var dropDownMenu = document.getElementById('dropDownMenu');
+  dropDownMenu.style.display = dropDownMenu.style.display == "none" ? "block" : "none";
+}
+
+function stopVideo()
+{
+  console.log("stopVideo");
+}
