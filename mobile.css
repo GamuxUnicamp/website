@@ -1,0 +1,40 @@
+@media (max-width:768px)
+{
+	#page_about p
+	{
+		width: 85% !important;
+	}
+
+	#page_about .title
+	{
+		font-size: 1.8em !important;
+	}
+
+	#page_projects .showcase
+	{
+		visibility: hidden !important;
+		display: none !important;
+	}
+
+	#page_projects .main
+	{
+		width: 90% !important;
+	}
+
+	th
+	{
+		width:100% !important;
+		display: block !important;
+		padding: 0 !important;
+	}
+
+	.whitespace
+	{
+		height: 20% !important;
+	}
+
+	#logo
+	{
+		margin-top: -60px !important;
+	}
+}
