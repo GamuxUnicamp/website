@@ -5,24 +5,20 @@
 
 /* set  default font to Open Sans, embeded from Google Fonts */
 * { font-family: 'Open Sans', sans; }
-content a { font-family: inherit; color: #00705e; text-decoration: none}
 
 /* set body to full width and height, instead of content's */
 html, body { width: 100%; height: 100%; }
 
 body
 {
-	/* hide overflow-x and overflow-y */
-	overflow: hidden;
-
 	/* remove body margin */
 	margin: 0;
 
-	/* set responsive background image (all browsers), that will appear when the video is not loaded */
+	/* hide overflow-x and overflow-y */
+	overflow: hidden;
+
+	/* set responsive background image (video not loaded) */
 	background: url(img/background.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
 	background-size: cover;
 }
 
@@ -31,6 +27,11 @@ body
 {
 	/* set position to fixed, preventing scroll */
 	position: fixed;
+
+	/* set the position to start cropping the video (i think 25% is more appropriate than 50%, thanks to video's content)*/
+	top: 25%;
+	left: 25%;
+	transform: translate(-25%,-25%);
 
 	/* set index to -1, ensuring it'll be behind other elements */
 	z-index: -1;
@@ -41,11 +42,6 @@ body
 	/* set minimum dimensions, allowing it to occupy full width and height even when the viewport is bigger than video's dimension */
 	min-height: 100%;
 	min-width: 100%;
-
-	/* set the position to start cropping the video (i think 25% is more appropriate than 50%, thanks to video's content)*/
-	top: 25%;
-	left: 25%;
-	transform: translate(-25%,-25%);
 }
 
 
@@ -60,31 +56,27 @@ body
 	/* set fixed position */
 	position: fixed;
 
+	/* apply a 10px space from top */
+	margin-top: 10px;
+
 	/* set index to 2, ensuring it'll be in front of other elements */
 	z-index: 2;
 
 	/* set width and height */
 	width: 100%;
 
-	/* apply a 10px space from top */
-	margin-top: 10px;
-
 	/* set a 10px padding */
 	padding: 10px;
 
 	color: white; /* set font color to white */
-	transition: all 0.75s ease-in;
+	transition: all 0.75s ease-in; /* is it necessary? */
 }
 
 /* set .nav_left and .nav_right widths, and apply a 110px (55*2) space for the logo image */
 #header div { width: calc(50% - 55px); }
 
-/* set position to relative and display to inline-block, to prevent line breaking */
-.nav_left, .nav_right
-{
-	position: relative;
-	display: inline-block;
-}
+/* set position to relative and display to inline-block, preventing line wrap */
+.nav_left, .nav_right { position: relative; display: inline-block; }
 
 /* set font styles for header links */
 #header a, #logo
@@ -92,42 +84,31 @@ body
 	position: relative;
 	display: inline-block;
 
-	cursor: pointer;
-
-	text-decoration: none; /* removes underline */
+	cursor: pointer; /* cursor turns to pointer on hover */
 	outline: none; /* removes outline when clicked */
+	text-decoration: none; /* removes underline */
 
-	margin: 5px 40px 5px 0; /* apply top (5px), bottom (5px) and right (40px) padding */
+	margin: 5px 40px -2px 0; /* apply top (5px), bottom (5px) and right (40px) padding */
 
 	text-transform: uppercase; /* transform text to UPPERCASE */
 
-	margin-bottom: -2px;
-
 	font-family: 'Orbitron';
-	font-size: 1.05em;
 }
 
+/* Underline Effect on Hover */
+#header a:hover:before { visibility: visible; transform: scaleX(1); }
 #header a:before {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #00E2BF;
-  visibility: hidden;
-  -webkit-transform: scaleX(0);
-  transform: scaleX(0);
-  -webkit-transition: all 0.3s ease-in-out 0s;
-  transition: all 0.3s ease-in-out 0s;
-
-  margin-bottom: -2px;
-}
-
-#header a:hover:before {
-  visibility: visible;
-  -webkit-transform: scaleX(1);
-  transform: scaleX(1);
+	content: "";
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	bottom: 0;
+	left: 0;
+	background-color: #00E2BF;
+	visibility: hidden;
+	transform: scaleX(0);
+	transition: all 0.3s ease-in-out 0s;
+	margin-bottom: -2px;
 }
 
 #header .nav_left { text-align: right; } /* align .nav_left text to right */
@@ -135,12 +116,12 @@ body
 
 #header #logo
 {
-	vertical-align: middle;
-	width: 60px;
-	height: 60px;
-	fill: white;
-
-	transition: all 0.75s ease-in;
+	vertical-align: middle; /* vertical-aligning text */
+	width: 60px; /* image width */
+	height: 60px; /* image height */
+	fill: white; /* svg color */
+	transition: all 0.75s ease-in; /* transitioning like header links */
+	user-select: none; /* unselectabble */
 }
 
 
@@ -190,20 +171,19 @@ body
 /* ================================ PAGES ================================ */
 /* ======================================================================= */
 
-.link_active
-{
-	border-bottom: 2px solid #00E2BF;
-}
+/* underlining active page */
+.link_active { border-bottom: 2px solid #00E2BF; }
 
-.page_active
-{
-	top: 0 !important;
-}
+/* make active page visible */
+.page_active { top: 0 !important; visibility: initial !important;}
 
+/* setting whitespace height */
 .whitespace { height: 110px; }
 
+/* Orbitron font in titles */
 h1, h2, h3 {font-family: 'Orbitron';}
 
+/* title settings */
 .title
 {
 	font-size: 2em;
@@ -211,37 +191,39 @@ h1, h2, h3 {font-family: 'Orbitron';}
 	text-transform: uppercase;
 }
 
+/* pages properties */
 #page_about, #page_news, #page_contact, #page_projects, #page_schedule, #page_wiki
 {
-	top: 100%;
-	transition: all 0.75s ease-in;
-	position: absolute;
+	position: absolute; 
+	top: 100%; /* hide at bottom */
 
-	z-index: 1;
+	visibility: hidden; /* hide it! */
+	z-index: 1; /* render in front of other elements */
 
 	width: 100%;
 	height: 100%;
 
-	background-color: #ddd;
-	background: url(img/whiteBackground.jpg) no-repeat center center fixed; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	transition: all 0.75s ease-in; /* set smooth transition */
 
 	color: #333;
+
+	background: url(img/whiteBackground.jpg) no-repeat center center fixed; 
+	background-color: #ddd;
+	background-size: cover;
 }
 
+/* content from pages */
 content
 {
 	display: inline-block;
 
-	width: calc(100% - 20px);
-	height: calc(100% - 120px);
+	width: calc(100% - 20px); /* 2*10px margin */
+	height: calc(100% - 120px); /* 110px whitespace + 10px margin */
 	
 	padding: 0 10px;
-
-	overflow-y: auto;
 }
+
+/* fixing content links */
+content a { font-family: inherit; color: #00705e; text-decoration: none}
 
 th { font-weight: normal; }

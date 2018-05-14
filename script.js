@@ -1,11 +1,14 @@
+// removing tab key! (weirg bug fix)
 document.addEventListener('keydown', function (e) {
     if (e.which == 9) {
         e.preventDefault();
     }
 });
 
+
 function moveUp(name)
 {
+	'''this function calls moveDown and then set parameter to active'''
 	moveDown(name)
 
 	page = document.getElementById('page_'+name);
@@ -28,6 +31,7 @@ function moveUp(name)
 
 function moveDown(name)
 {
+	'''removes all actives'''
 	pageList = ['about', 'news', 'contact', 'projects', 'schedule', 'wiki']
 
 	for (var i = 0; i <= 5; i++) {
