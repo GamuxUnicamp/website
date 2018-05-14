@@ -6,7 +6,16 @@ document.addEventListener('keydown', function (e) {
 
 function moveUp(name)
 {
-	moveDown(name)
+	active = findActive()
+
+	if (active != "")
+	{
+		document.getElementById('page_'+active).style.zIndex = "0"
+		document.getElementById('page_'+name).style.zIndex = "1"
+		document.getElementById('link_'+active).classList.remove('link_active')
+	}
+
+	setTimeout(function(){ document.getElementById('page_'+active).classList.remove('page_active') },750)
 
 	page = document.getElementById('page_'+name);
 	link = document.getElementById('link_'+name);
@@ -42,4 +51,20 @@ function moveDown(name)
 	}
 	document.getElementById('header').style.color = 'white';
 	document.getElementById('logo').style.fill = 'white';
+}
+
+function findActive()
+{
+	pageList = ['about', 'news', 'contact', 'projects', 'schedule', 'wiki']
+	active = ""
+
+	for (var i = 0; i <= 5; i++) {		
+		if (document.getElementById('page_'+pageList[i]).classList.contains('page_active'))
+		{
+			active = pageList[i];
+			break;
+		}
+	}
+
+	return active;
 }
