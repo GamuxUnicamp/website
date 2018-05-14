@@ -175,7 +175,7 @@ body
 .link_active { border-bottom: 2px solid #00E2BF; }
 
 /* make active page visible */
-.page_active { top: 0 !important;}
+.page_active { top: 0 !important; visibility: initial !important;}
 
 /* setting whitespace height */
 .whitespace { height: 110px; }
@@ -197,6 +197,7 @@ h1, h2, h3 {font-family: 'Orbitron';}
 	position: absolute; 
 	top: 100%; /* hide at bottom */
 
+	visibility: hidden; /* hide it! */
 	z-index: 1; /* render in front of other elements */
 
 	width: 100%;

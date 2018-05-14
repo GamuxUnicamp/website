@@ -5,10 +5,9 @@ document.addEventListener('keydown', function (e) {
     }
 });
 
-
+// this function calls moveDown and then set parameter to active
 function moveUp(name)
 {
-	'''this function calls moveDown and then set parameter to active'''
 	moveDown(name)
 
 	page = document.getElementById('page_'+name);
@@ -29,9 +28,9 @@ function moveUp(name)
 	}
 }
 
+// removes all actives
 function moveDown(name)
 {
-	'''removes all actives'''
 	pageList = ['about', 'news', 'contact', 'projects', 'schedule', 'wiki']
 
 	for (var i = 0; i <= 5; i++) {
