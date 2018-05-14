@@ -228,6 +228,7 @@ content
 	height: calc(100% - 120px); /* 110px whitespace + 10px margin */
 	
 	padding: 0 10px;
+	overflow-y: auto;
 }
 
 /* fixing content links */
