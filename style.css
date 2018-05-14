@@ -70,6 +70,14 @@ body
 
 	color: white; /* set font color to white */
 	transition: all 0.75s ease-in; /* is it necessary? */
+
+	/* blocking header selection */
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	-o-user-select: none;
+	user-select: none;
 }
 
 /* set .nav_left and .nav_right widths, and apply a 110px (55*2) space for the logo image */
@@ -121,7 +129,6 @@ body
 	height: 60px; /* image height */
 	fill: white; /* svg color */
 	transition: all 0.75s ease-in; /* transitioning like header links */
-	user-select: none; /* unselectabble */
 }
 
 
