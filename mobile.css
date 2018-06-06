@@ -1,41 +1,41 @@
-/* small adjustments for our beloved small devices! */
-@media screen and (orientation:portrait) and (max-width:768px)
+/* mobile overwrites! this is an !important document, huh? */
+
+@media (max-width:768px) /* code below will be used when device's width is less than 768px */
 {
-	#page_about p
-	{
-		width: 85% !important;
-	}
-
-	#page_about .title
-	{
-		font-size: 1.8em !important;
-	}
-
-	#page_projects .showcase
-	{
-		visibility: hidden !important;
-		display: none !important;
-	}
-
-	#page_projects .main
-	{
-		width: 90% !important;
-	}
+	h1 { font-size: 1.8em; } /* shorten h1 font size a little */
 
 	th
 	{
-		width:100% !important;
-		display: block !important;
-		padding: 0 !important;
+		/* set block display */
+		display: block;
+
+		/* set full width */
+		width: 100% !important;
+
+		/* set padding and margin */
+		padding: 0;
+		margin: 7.5vh 0;
+
+		/* centering text */
+		text-align: center !important;
 	}
 
-	.whitespace
+	.whitespace { height: 10vh; } /* change whitespace height */
+
+	.title { font-size: 1.8em; } /* shorten title size a little */
+
+	#header #header_logo
 	{
-		height: 20% !important;
+		/* horizontally aligning */
+		padding-left: 100% !important;
+		transform: translateX(-50%);
 	}
 
-	#logo
-	{
-		margin-top: -60px !important;
-	}
+	#header .nav_links { display: none; } /* hide navigation links */
+
+	#about p { width: 85% !important; } /* increase about text width */
+
+	#wiki, #calendar, #media { padding: 10px 50px !important;} /* change padding for better readability */
+
+	#wiki img, #calendar img { display: none; } /* hide wiki and calendar images */
 }

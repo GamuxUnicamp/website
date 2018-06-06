@@ -7,231 +7,301 @@
 <!-- tell browser the language is brazilian portuguese -->
 <html lang='PT-BR'>
 	<head>
-		<!-- set charset to UTF-8, allowing accentuation -->
+		<!-- set charset to utf-8, allowing accentuation -->
 		<meta charset='UTF-8'>
-		<!-- setting the viewport -->
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<!-- importing css and script -->
+
+		<!-- set viewport -->
+		<meta name='viewport' content='width=device-width, initial-scale=1'>
+
+		<!-- importing css -->
 		<link rel='stylesheet' type='text/css' href='mobile.css'>
 		<link rel='stylesheet' type='text/css' href='style.css'>
-		<script type='text/javascript' src='script.js'></script>
-		<!-- importing Open Sans font from Google Fonts -->
-		<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-		<link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+
+		<!-- importing Open Sans font from google fonts -->
+		<link href='https://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet'>
+		<link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet'>
 
 		<!-- set website title -->
 		<title>Gamux</title>
+
 		<!-- set favicon -->
 		<link rel='shortcut icon' type='image/png' href='img/favicon.png'/>
 	</head>
 
 	<body>
-		<!-- Facebook Page Plugin script! -->
-		<div id="fb-root"></div>
-		<script>(function(d, s, id) {
-		  var js, fjs = d.getElementsByTagName(s)[0];
-		  if (d.getElementById(id)) return;
-		  js = d.createElement(s); js.id = id;
-		  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
-		  fjs.parentNode.insertBefore(js, fjs);
-		}(document, 'script', 'facebook-jssdk'));</script>
+		<!-- facebook's page plugin script -->
+		<div id='fb-root'></div>
+		<script>
+			(function(d, s, id) {
+			var js, fjs = d.getElementsByTagName(s)[0];
+			if (d.getElementById(id)) return;
+			js = d.createElement(s); js.id = id;
+			js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12';
+			fjs.parentNode.insertBefore(js, fjs);
+			}(document, 'script', 'facebook-jssdk'));
+		</script>
 
-		<!-- video background! -->
+		<!-- video background -->
 		<video autoplay loop id='bg_video'>
-			<source src='img/index_video.mp4' type='video/mp4'>
+			<source src='img/content/cover_video.mp4' type='video/mp4'>
 		</video>
 
-		<!-- header is also the navigation bar. it's where links and logo image are -->
+		<!-- header -->
 		<div id='header'>
-			<center> <!-- horizontally centering elements -->
-				<!-- links from logo's left -->
-				<div class='nav_left'>
-					<a id='link_about' onclick='moveUp("about")'>Sobre</a>
-					<a id='link_news' onclick='moveUp("news")'>Notícias</a>
-					<a id='link_contact' onclick='moveUp("contact")'>Contato</a>
-				</div>
 
-				<!-- Gamux logo image -->
-				<svg id='logo' viewBox='0 0 165 165' onclick='moveDown()'>
-  					<path d="m 10,125 0,-80 C 80,2.5 65,12 80,2.5 c 9.5,5.5 0,0 28,16 C 82,34 58,50 40,60 l 0,46 39,23 38,-22 0,-42 c 0,0 0,0 -38,20 L 50,66 C 120,25 98,38 120,25 l 28,16 c 0,30 0,54 0,82 l -68,40 z" />
-				</svg>
+			<!-- gamux logo image -->
+			<img id='header_logo' src='img/header_logo.png' onclick="location.href='#'">
 
-				<!-- links from logo's right -->
-				<div class='nav_right'>
-					<a id='link_projects' onclick='moveUp("projects")'>Projetos</a>
-					<a id='link_schedule' onclick='moveUp("schedule")'>Agenda</a>
-					<a id='link_wiki' onclick='moveUp("wiki")'>Wiki</a>
-				</div>
-			</center>
+			<!-- navigation links -->
+			<div class='nav_links'>
+				<a href='#about'>Sobre</a>
+				<a href='#projects'>Projetos</a>
+				<a href='#wiki'>Wiki</a>
+				<a href='#calendar'>Agenda</a>
+				<a href='#media'>Notícias</a>
+			</div>
 		</div>
 
 		<!-- website index content (only an image) -->
-		<div id='content'>
-			<img src='img/index_logo.png' class='index_logo'>
+		<div id='cover'>
+			<img src='img/content/cover_logo.png' class='cover_logo'>
 		</div>
 
-		<div id='page_about'>
+		<!-- about section -->
+		<div id='about'>
+			<!-- apply empty space at start -->
 			<div class='whitespace'></div>
-			<content>
-				<center>
-					<p style='width: 40vmax;'>
-						<h class='title'>Mais que apenas<br>programação</h>
-						<br><br>
-						O Gamux é um grupo de pesquisa e desenvolvimento de jogos organizado por estudantes, com sedes na Unicamp, PUC-Campinas e FACAMP.<br>
-						Nosso objetivo é prover suporte à comunidade de desenvolvedores e à cultura de jogos nas universidades da região de Campinas, participando de projetos, realizando pesquisas e sediando eventos relacionadas à área, como <i>Game Jams</i>.
-					</p>
-					<br>
-					<table>
-						<tr>
-							<th style='vertical-align: top; width: 33%; padding: 0 10px;'>
-								<img src='img/about/projetos.png'>
-								<h3>PROJETOS</h3>
-								Realização de projetos relacionados ao desenvolvimento de jogos digitais.<br><br><br>
-							</th>
-							<th style="vertical-align: top; width: 33%; padding: 0 10px;">
-								<img src='img/about/pesquisas.png'>
-								<h3>PESQUISAS</h3>
-								Relacionando novas tecnologias aplicadas a jogos e suas possíveis implicações para a sociedade.<br><br><br>
-							</th>
-							<th style="vertical-align: top; width: 33%; padding: 0 10px;">
-								<img src='img/about/eventos.png'>
-								<h3>EVENTOS</h3>
-								Organização de game Jams, palestras e workshops relacionados ao desenvolvimento de jogos.
-							</th>
-						</tr>
-					</table>
 
-				</center>
-			</content>
-		</div>
+			<!-- centering elements -->
+			<center>
 
-		<div id='page_news'>
-			<div class='whitespace'></div>
-			<content>
-				<table width="100%">
+				<!-- first paragraph -->
+				<p>
+					<h class='title'>Mais que apenas<br>programação</h>
+					<br><br>
+					O Gamux é um grupo de pesquisa e desenvolvimento de jogos organizado por estudantes, com sedes na Unicamp, PUC-Campinas e FACAMP.<br>
+					Nosso objetivo é prover suporte à comunidade de desenvolvedores e à cultura de jogos nas universidades da região de Campinas, participando de projetos, realizando pesquisas e sediando eventos relacionadas à área, como <i>Game Jams</i>.<br><br>
+				</p>
+
+				<!-- three column table -->
+				<table width='90%'>
 					<tr>
-						<th width="50%">
-							<p style="font-size: 6vmin; font-weight: lighter;">
-								Siga nossas redes sociais e fique por dentro de todas as novidades!<br><br>
-							</p>
-							<a href='https://www.facebook.com/Gamux/' target='_blank'><img src='img/social/facebook.png'></a>
-							<a href='https://www.youtube.com/channel/UCGsLc81dw7osxv7jxbx9Upg' target='_blank'><img src='img/social/youtube.png'></a><br><br>
+						<!-- projects description -->
+						<th style='vertical-align: top; width: 33%; padding: 0 10px;'>
+							<img src='img/about/projetos.png'>
+							<h3>PROJETOS</h3>
+							Realização de projetos relacionados ao desenvolvimento de jogos digitais.
 						</th>
-						<th width="50%">
-							<div class="fb-page" data-width='500' data-height='520' data-href="https://www.facebook.com/Gamux" data-tabs="timeline, events, messages" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"><blockquote cite="https://www.facebook.com/Gamux/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/Gamux/">Gamux</a></blockquote></div>
-						</th>
-					</tr>
-				</table>				
-			</content>
-		</div>
 
-		<div id='page_contact'>
-			<div class='whitespace'></div>
-			<content>
-				<table width="100%" min-height="100%" height="100%">
-					<tr>
-						<th width="50%" valign="top">
-							<font style="font-size: 4vmin;">
-								Obrigado pelo interesse em falar conosco!<br><br>
-								Estamos disponíveis nos seguintes meios:<br><br>
-								<a href='mailto:contact@gamux.com.br'><img src='img/social/email.png' width="128px"></a>
-								<a href='https://bit.ly/2tlvK5X' target='_blank'><img src='img/social/whatsapp.png' width="128px"></a><br><br>
-								Ou descubra a seguir como entrar em contato com cada uma de nossas sedes:<br><br>
-							</font>
+						<!-- research description -->
+						<th style="vertical-align: top; width: 33%; padding: 0 10px;">
+							<img src='img/about/pesquisas.png'>
+							<h3>PESQUISAS</h3>
+							Relacionando novas tecnologias aplicadas a jogos e suas possíveis implicações para a sociedade.
 						</th>
-						<th width="50%" height='100%'>
-							<iframe src="https://www.google.com/maps/d/embed?mid=1_m5exc75fHT4NtlAF3VO6t6fG7vpaZ9D"
-							width="100%"
-							height="100%"
-							style="min-height: 300px;border: none">>
-							</iframe>
+
+						<!-- events description -->
+						<th style="vertical-align: top; width: 33%; padding: 0 10px;">
+							<img src='img/about/eventos.png'>
+							<h3>EVENTOS</h3>
+							Organização de Game Jams, palestras e workshops relacionados ao desenvolvimento de jogos.
 						</th>
 					</tr>
 				</table>
-			</content>
+			</center>
 		</div>
 
-		<div id='page_projects'>
+		<!-- projects section -->
+		<div id='projects'>
+
+			<!-- apply empty space -->
 			<div class='whitespace'></div>
-			<content>
-				<center>
-					<table class='showcase' width="16.5%" style="display: inline-block;">
-						<tr><td>
-							<a href="https://ticolol.itch.io/winged-warden" target="_blank">
-								<img src="https://img.itch.zone/aW1hZ2UvOTQzNTUvNDQ2MDcwLnBuZw==/315x250%23c/kJ4kJ6.png" width="100%">
-							</a>
-						</td></tr>
-						<tr><td>
-							<a href="https://gfm.itch.io/the-cow-strikes-back" target="_blank">
-								<img src="https://img.itch.zone/aW1hZ2UvNjA2ODUvMjczODIwLmdpZg==/315x250%23cm/1XaTJp.gif" width="100%">
-							</a>
-						</td></tr>
-						<tr><td>
-							<a href="https://matheusmortatti.itch.io/picotroid" target="_blank">
-								<img src="https://img.itch.zone/aW1hZ2UvMTM4NTY2LzYzNTU3Ni5wbmc=/315x250%23c/e0PDOE.png" width="100%">
-							</a>
-						</td></tr>
-					</table>
-					<table class='main' width="45%" min-height="100%" height="100%" style="display: inline-block; vertical-align: 500%;">
-						<th>
-							<h1>Visite <a href="https://gamux.itch.io/" target="_blank">nossa página</a> no itch.io e conheça nossos projetos!</h1><br><br>
-							<a href='https://play.google.com/store/apps/developer?id=Gamux&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1' target="_blank"><img alt='Disponível no Google Play' src='https://play.google.com/intl/en_us/badges/images/generic/pt-br_badge_web_generic.png'/ width="200vmin"></a>
-						</th></table>
-					<table class='showcase' width="16.5%" style="display: inline-block;">
-						<tr><td>
-							<a href="https://gfm.itch.io/warnicorn" target="_blank">
-								<img src="https://img.itch.zone/aW1hZ2UvNzgxODYvMzgwODcyLmdpZg==/315x250%23cm/alh2qk.gif" width="100%">
-							</a>
-						</td></tr>
-						<tr><td>
-							<a href="https://ticolol.itch.io/lightpuzzles" target="_blank">
-								<img src="https://img.itch.zone/aW1hZ2UvNTcwMDkvNTE2MDg0LnBuZw==/315x250%23c/vjDcXR.png" width="100%">
-							</a>
-						</td></tr>
-						<tr><td>
-							<a href="https://ticolol.itch.io/alisteirs-ritual" target="_blank">
-								<img src="https://img.itch.zone/aW1hZ2UvNTU1MjEvMzIxMTEzLnBuZw==/315x250%23c/L%2FfIIP.png" width="100%">
-							</a>
-						</td></tr>
-					</table>
-				</center>
-			</content>
+
+			<!-- centering elements -->
+			<center>
+
+				<!-- projects title -->
+				<h2>PROJETOS</h2>
+
+				<!-- flex container -->
+				<div class='flex_container'>
+
+					<div class='flex_child'>
+						<a href='https://gamuxunicamp.github.io/godotware/' target='_blank'>
+							<img src='https://raw.githubusercontent.com/GamuxUnicamp/godotware/master/iconware.png'>
+						</a><br>
+						Godotware<br><br>
+					</div>
+
+					<div class='flex_child'>
+						<a href='https://gfm.itch.io/the-cow-strikes-back' target='_blank'>
+							<img src='https://img.itch.zone/aW1hZ2UvNjA2ODUvMjczODIwLmdpZg==/315x250%23cm/1XaTJp.gif'>
+						</a><br>
+						The Cow Strikes Back<br><br>
+					</div>
+
+					<div class='flex_child'>
+						<a href='https://matheusmortatti.itch.io/picotroid' target='_blank'>
+							<img src='https://img.itch.zone/aW1hZ2UvMTM4NTY2LzYzNTU3Ni5wbmc=/315x250%23c/e0PDOE.png'>
+						</a><br>
+						Picotroid<br><br>
+					</div>
+
+					<div class='flex_child'>
+						<a href='https://gfm.itch.io/warnicorn' target='_blank'>
+							<img src='https://img.itch.zone/aW1hZ2UvNzgxODYvMzgwODcyLmdpZg==/315x250%23cm/alh2qk.gif'>
+						</a><br>
+						Warnicon<br><br>
+					</div>
+
+					<div class='flex_child'>
+						<a href='https://ticolol.itch.io/lightpuzzles' target='_blank'>
+							<img src='https://img.itch.zone/aW1hZ2UvNTcwMDkvNTE2MDg0LnBuZw==/315x250%23c/vjDcXR.png'>
+						</a><br>
+						Light Puzzles<br><br>
+					</div>
+
+					<div class='flex_child'>
+						<a href='https://ticolol.itch.io/alisteirs-ritual' target='_blank'>
+							<img src='https://img.itch.zone/aW1hZ2UvNTU1MjEvMzIxMTEzLnBuZw==/315x250%23c/L%2FfIIP.png'>
+						</a><br>
+						Alisteir's Ritual<br><br>
+					</div>
+				</div>
+				<a href='https://gamux.itch.io/' target='_blank'>Confira a lista completa...</a>
+			</center>
+
+			<!-- apply empty space -->
+			<div class='whitespace'></div>
 		</div>
 
-		<div id='page_schedule'>
-			<div class='whitespace'></div>
-			<content>
-				<center>
-					<h1>Acompanhe nosso calendário através <a href="https://calendar.google.com/calendar/r?cid=Y29udGF0b0BnYW11eC5jb20uYnI">deste link</a>!</h1><br>
+		<!-- wiki section -->
+		<div id='wiki' style='background: #007799; color: #F8F8F8; padding: 30px 80px'>
 
-					<h2>Unicamp</h3>
-					<ul>
-						<li><b>Reuniões semanais:</b> Quartas-feiras, das 17:45h às 18:48h, no IC 3,5.</li>
-						<li><b>Horário de desenvolvimento:</b> Quartas-feiras, 12:00h às 14:00 no IC 3.</li>
-					</ul>
-				</center>
-			</content>
+			<!-- two column table -->
+			<table width='100%'>
+				<tr>
+
+					<!-- wiki description -->
+					<th width='50%' style='text-align: left;'>
+						<p>
+							<h1>Já pensou em criar seu próprio jogo?</h1>
+							Na nossa Wiki, temos vários tutorias para aqueles interessados no desenvolvimento de jogos!<br>
+							Ah, e não é necessário saber programar!<br><br>
+							<a href='https://github.com/GamuxUnicamp/Gamux-Wiki/wiki' target='_blank'>
+								<button>Conheça a wiki</button>
+							</a>
+						</p>
+					</th>
+
+					<!-- wiki image -->
+					<th width='50%'>
+						<img src='img/content/processor.png' height='300px'>
+					</th>
+				</tr>
+			</table>
 		</div>
 
-		<div id='page_wiki'>
-			<div class='whitespace'></div>
-			<content>
+		<!-- calendar section -->
+		<div id='calendar' style='background: #0097BA; color: #F8F8F8; padding: 25px 80px;'>
+
+			<!-- two column table -->
+			<table width='100%'>
+				<tr>
+					<!-- calendar image -->
+					<th width='50%'>
+						<img src='img/content/controller.png' height='300px'>
+					</th>
+
+					<!-- calendar description -->
+					<th width='50%' style='text-align: left;'>
+						<p>
+							<h1>Quer se tornar um desenvolvedor?</h1>
+							Então converse conosco!<br>
+							Na Unicamp, temos reuniões todas as quartas-feiras.<br><br>
+							<a href='https://calendar.google.com/calendar/r?cid=Y29udGF0b0BnYW11eC5jb20uYnI' target='_blank'>
+								<button>Confira nosso calendário</button>
+							</a>
+						</p>
+					</th>
+				</tr>
+			</table>
+		</div>
+
+		<!-- media section -->
+		<div id='media' style='background: #157E94; color: #F8F8F8; padding: 65px 80px;'>
+
+			<!-- two column table -->
+			<table width='100%'>
+				<tr>
+
+					<!-- media description -->
+					<th width='50%' style='text-align: left;'>
+						<p>
+							<h1>Está interessado?</h1>
+							Acompanhe nossas redes sociais!<br>
+							Fique por dentro de palestras, eventos, game jams e muito mais.
+						</p>
+					</th>
+
+					<!-- facebook's page plugin -->
+					<th width='50%'>
+						<div class='fb-page' data-width='500' data-href='https://www.facebook.com/Gamux' data-tabs='' data-small-header='false' data-adapt-container-width='true' data-hide-cover='false' data-show-facepile='true'><blockquote cite='https://www.facebook.com/Gamux/' class='fb-xfbml-parse-ignore'><a href='https://www.facebook.com/Gamux/'>Gamux</a></blockquote></div>
+					</th>
+				</tr>
+			</table>
+		</div>
+
+		<!-- google my maps embeded code -->
+		<div style='width: 100%; overflow: hidden; height: 300px;'>
+ 	 		<iframe src='https://www.google.com/maps/d/embed?mid=1_m5exc75fHT4NtlAF3VO6t6fG7vpaZ9D'
+    				width='100%'
+    				height='600'
+    				frameborder='0'
+    				style='border:0; margin-top: -150px;'>
+			</iframe>
+		</div>
+
+		<!-- footer -->
+		<div id='footer'>
+
+			<!-- create div for vertical-aligning -->
+			<div style='display: table-cell;'>
+
+				<!-- centering elements -->
 				<center>
-					<h1><a href="https://github.com/GamuxUnicamp/Gamux-Wiki/wiki">Clique aqui</a> para visitar a wiki!</h1><br>
-					<p style="font-size: 4vmin;width: 60vmax;">
-						O Gamux possui uma Wiki oficial, onde são respondidas diversas questões sobre o funcionamento da entidade, bem como sugestões de pesquisa relacionadas ao desenvolvimento de jogos!<br><br>		
-						Além disso, é constantemente atualizada com informações sobre os eventos recentes. Vale a pena acompanhar!<br><br>
-					</p>
+					<a href='https://www.facebook.com/Gamux/' target='_blank'>
+						<img src='img/social/facebook.png' height='24px'>
+					</a>
+					<a href='https://play.google.com/store/apps/developer?id=Gamux' target='_blank'>
+						<img src='img/social/playstore.png' height='22px' style='vertical-align: 3%;'>
+					</a>
+					<a href='http://gamux-whatsapp.herokuapp.com/' target='_blank'>
+						<img src='img/social/whatsapp.png' height='38px' style='vertical-align: -30%;'>
+					</a>
+					<a href='https://www.youtube.com/channel/UCGsLc81dw7osxv7jxbx9Upg' target='_blank'>
+						<img src='img/social/youtube.png' height='28px' style='vertical-align: -10%;'>
+					</a>
+					
+					<!-- larger line breaking -->
+					<br style='font-size: 2em'>
+
+					<!-- text info -->
+					<font style='font-family: 'Roboto';'>
+						contact@gamux.com.br
+						<br>
+						Gamux <div style='transform: scale(-1, 1); display: inline-block;'>©</div> 2018
+					</font>
 				</center>
-			</content>
+			</div>
 		</div>
 
 	</body>
 </hmtl>
 
-<!-- Free software is software that respects your freedom and the social solidarity of your community. -->
-<!-- So it's free as in freedom. -->
+<!-- "Free software is software that respects your freedom and the social solidarity of your community. -->
+<!-- So it's free as in freedom." -->
 <!-- Richard Stallman -->
 
 <!-- Thank you for reading! -->
-<!-- </ Gamux > -->
+<!-- Gamux: 2018 -->

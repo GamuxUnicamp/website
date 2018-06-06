@@ -2,47 +2,48 @@
 /* ================================ GENERAL ================================ */
 /* ========================================================================= */
 
-
-/* set  default font to Open Sans, embeded from Google Fonts */
-* { font-family: 'Open Sans', sans; }
-
-/* set body to full width and height, instead of content's */
-html, body { width: 100%; height: 100%; }
+html, body { width: 100%; height: 100%;} /* set body to full width and height */
 
 body
 {
 	/* remove body margin */
 	margin: 0;
 
-	/* hide overflow-x and overflow-y */
-	overflow: hidden;
-
-	/* set responsive background image (video not loaded) */
+	/* set responsive background image (will appear when the video is not yet loaded) */
 	background: url(img/background.jpg) no-repeat center center fixed; 
 	background-size: cover;
+
+	/* set default font color */
+	color: #333333;
 }
 
-/* Background Video */
-#bg_video
+* { font-family: 'Open Sans', sans; } /* set default font to open sans, embeded from google fonts */
+a { font-family: inherit; color: #00705e; text-decoration: none; outline: none;} /* remove links decorations */
+
+button
 {
-	/* set position to fixed, preventing scroll */
-	position: fixed;
+	/* apply vertical and horizontal padding */
+	padding: 10px 30px;
 
-	/* set the position to start cropping the video (i think 25% is more appropriate than 50%, thanks to video's content)*/
-	top: 25%;
-	left: 25%;
-	transform: translate(-25%,-25%);
+	/* set cursor to pointer, like links */
+	cursor: pointer;
 
-	/* set index to -1, ensuring it'll be behind other elements */
-	z-index: -1;
+	/* remove border but apply radius */
+	border: none;
+	border-radius: 5px;
 
-	/* set default dimensions to auto, allowing it to resize the video if needed */
-	width: auto;
-	height: auto;
-	/* set minimum dimensions, allowing it to occupy full width and height even when the viewport is bigger than video's dimension */
-	min-height: 100%;
-	min-width: 100%;
+	/* set background color */
+	background-color: #F8F8F8;
+
+	/* set font style */
+	font-family: 'Roboto', 'Open Sans', sans;
+	color: #333333;
+	text-transform: uppercase;
 }
+
+h1, h2, h3 { font-family: 'Roboto' !important; } /* title custom font */
+
+th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 
 
 
@@ -56,55 +57,38 @@ body
 	/* set fixed position */
 	position: fixed;
 
-	/* apply a 10px space from top */
-	margin-top: 10px;
-
 	/* set index to 2, ensuring it'll be in front of other elements */
 	z-index: 2;
 
-	/* set width and height */
+	/* set full width */
 	width: 100%;
 
 	/* set a 10px padding */
-	padding: 10px;
+	padding: 15px 0;
 
-	color: white; /* set font color to white */
-	transition: all 0.75s ease-in; /* is it necessary? */
-
-	/* blocking header selection */
-	-webkit-user-select: none;
-	-khtml-user-select: none;
-	-moz-user-select: none;
-	-ms-user-select: none;
-	-o-user-select: none;
-	user-select: none;
+	/* set background color */
+	background-color: rgba(36, 41, 46);
 }
 
-/* set .nav_left and .nav_right widths, and apply a 110px (55*2) space for the logo image */
-#header div { width: calc(50% - 55px); }
-
-/* set position to relative and display to inline-block, preventing line wrap */
-.nav_left, .nav_right { position: relative; display: inline-block; }
-
-/* set font styles for header links */
-#header a, #logo
+#header a, #header_logo
 {
+	/* position and display styles */
 	position: relative;
 	display: inline-block;
 
-	cursor: pointer; /* cursor turns to pointer on hover */
-	outline: none; /* removes outline when clicked */
-	text-decoration: none; /* removes underline */
+	/* set cursor to pointer, like links */
+	cursor: pointer;
 
-	margin: 5px 30px -2px 0; /* apply top (5px), bottom (5px) and right (40px) padding */
-
-	text-transform: uppercase; /* transform text to UPPERCASE */
-
-	font-family: 'Orbitron';
+	/* font styles */
+	font-family: 'Roboto';
+	font-size: 0.95em;
+	color: #F8F8F8;
+	text-transform: uppercase;
 }
 
-/* Underline Effect on Hover */
-#header a:hover:before { visibility: visible; transform: scaleX(1); }
+#header a { margin-left: 40px; } /* set gap between navigation links */
+
+/* Underline Effects (tl;dr) */
 #header a:before {
 	content: "";
 	position: absolute;
@@ -112,33 +96,76 @@ body
 	height: 2px;
 	bottom: 0;
 	left: 0;
-	background-color: #00E2BF;
+	background-color: #0097BA;
 	visibility: hidden;
+	-webkit-transform: scaleX(0);
 	transform: scaleX(0);
+	-webkit-transition: all 0.3s ease-in-out 0s;
 	transition: all 0.3s ease-in-out 0s;
 	margin-bottom: -2px;
 }
+#header a:hover:before {
+	visibility: visible;
+	-webkit-transform: scaleX(1);
+	transform: scaleX(1);
+}
 
-#header .nav_left { text-align: right; } /* align .nav_left text to right */
-#header .nav_right { text-align: left; } /* align .nav_right to left      (confusing, huh?) */ 
-
-#header #logo
+#header #header_logo
 {
-	vertical-align: middle; /* vertical-aligning text */
-	width: 60px; /* image width */
-	height: 60px; /* image height */
-	fill: white; /* svg color */
-	transition: all 0.75s ease-in; /* transitioning like header links */
+	/* set image dimensions */
+	height: 40px;
+	width: auto;
+
+	/* apply padding */
+	padding-left: 10%;
+
+	/* vertical aligning */
+	vertical-align: middle;
+}
+
+#header .nav_links
+{
+	/* apply padding */
+	padding-top: 10px;
+	padding-right: 10%;
+
+	/* set float to right */
+	float: right;
+
+	/* prevent wrapping */
+	white-space: nowrap;
 }
 
 
 
 /* ========================================================================= */
-/* ================================ CONTENT ================================ */
+/* ================================= COVER ================================= */
 /* ========================================================================= */
 
 
-#content
+#bg_video
+{
+	/* set position to fixed, preventing scroll */
+	position: fixed;
+
+	/* set index to -1, ensuring it'll be behind other elements */
+	z-index: -1;
+
+	/* set default dimensions to auto, allowing it to resize the video if needed */
+	width: auto;
+	height: auto;
+
+	/* set minimum dimensions, allowing it to occupy full width and height even when viewport is bigger than video's dimension */
+	min-height: 100%;
+	min-width: 100%;
+
+	/* set the position to start cropping the video (i think 25% is more appropriate than 50%, thanks to video's content)*/
+	top: 25%;
+	left: 25%;
+	transform: translate(-25%,-25%);
+}
+
+#cover
 {
 	/* set display to inline-block, so we can use margin properties */
 	display: inline-block;
@@ -149,12 +176,9 @@ body
 
 	/* start content after header element, preventing overlap */
 	margin-top: 70px;
-
-	/* fix weird bug (???) i think it's caused by 'height: calc()' */
-	margin-bottom: -5px;
 }
 
-#content .index_logo
+#cover .cover_logo
 {
 	/* set position to relative, allowing using top attribute */
 	position: relative;
@@ -175,63 +199,75 @@ body
 
 
 /* ======================================================================= */
-/* ================================ PAGES ================================ */
+/* ============================== SECTIONS =============================== */
 /* ======================================================================= */
 
-/* underlining active page */
-.link_active { border-bottom: 2px solid #00E2BF; }
 
-/* make active page visible */
-.page_active { top: 0 !important; visibility: initial !important;}
+.whitespace { height: 80px; } /* just an empty space */
 
-/* setting whitespace height */
-.whitespace { height: 110px; }
-
-/* Orbitron font in titles */
-h1, h2, h3 {font-family: 'Orbitron';}
-
-/* title settings */
 .title
 {
+	/* font styles */
+	font-family: 'Roboto';
 	font-size: 2em;
-	font-family: 'Orbitron';
 	text-transform: uppercase;
 }
 
-/* pages properties */
-#page_about, #page_news, #page_contact, #page_projects, #page_schedule, #page_wiki
+#about, #projects
 {
-	position: absolute; 
-	top: 100%; /* hide at bottom */
-
-	visibility: hidden; /* hide it! */
-	z-index: 1; /* render in front of other elements */
-
+	/* full width */
 	width: 100%;
-	height: 100%;
 
-	transition: all 0.75s ease-in; /* set smooth transition */
-
-	color: #333;
-
-	background: url(img/whiteBackground.jpg) no-repeat center center fixed; 
-	background-color: #ddd;
-	background-size: cover;
+	/* set background color */
+	background-color: #F2F2F2;
 }
 
-/* content from pages */
-content
+#about p { width: 40vmax; } /* about text width */
+
+#projects .flex_container
 {
-	display: inline-block;
+	/* container width */
+	width: 75%;
 
-	width: calc(100% - 20px); /* 2*10px margin */
-	height: calc(100% - 120px); /* 110px whitespace + 10px margin */
-	
-	padding: 0 10px;
-	overflow-y: auto;
+	/* flex properties */
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: space-evenly;
 }
 
-/* fixing content links */
-content a { font-family: inherit; color: #00705e; text-decoration: none}
+#projects .flex_container img
+{
+	/* set dimensions */
+	width: 100px;
+	height: 100px;
 
-th { font-weight: normal; }
+	/* round border */
+	border-radius: 10px;
+}
+
+#projects .flex_child { width: 120px; } /* set equal width for each child */
+
+
+
+/* ======================================================================== */
+/* ================================ FOOTER ================================ */
+/* ======================================================================== */
+
+
+#footer
+{
+	/* full width */
+	width: 100%;
+
+	/* set table display for vertical aligning */
+	display: table;
+
+	/* set padding */
+	padding: 20px 0;
+
+	/* background color */
+	background-color: rgba(36, 41, 46);
+
+	/* font color */
+	color: #F8F8F8;
+}
