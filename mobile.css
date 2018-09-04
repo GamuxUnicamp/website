@@ -38,4 +38,28 @@
 	#wiki, #calendar, #media { padding: 10px 50px !important;} /* change padding for better readability */
 
 	#wiki img, #calendar img { display: none; } /* hide wiki and calendar images */
+
+	/* Livre Game Jam */
+	#cover .lgj_logo
+	{
+		top: 75px !important;
+		width: 75% !important;
+	}
+
+	#cover { font-size: 1.25em !important; }
+	#cover font { font-size: 1.25em !important; }
+
+	.lgj_table th
+	{
+		display: initial !important;
+		padding: initial !important;
+		padding-left: 7px !important;
+	}
+
+	.lgj_table img
+	{
+		width: 20% !important;
+		height: auto !important;
+		vertical-align: middle !important;
+	}
 }
