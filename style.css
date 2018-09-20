@@ -2,13 +2,6 @@
 /* ================================ GENERAL ================================ */
 /* ========================================================================= */
 
-@font-face {
-  font-family: 'Upheav';
-  src: url('fonts/upheavtt.ttf') format('truetype');
-  font-style: normal;
-  font-weight: normal;
-}
-
 html, body { width: 100%; height: 100%;} /* set body to full width and height */
 
 body
@@ -22,11 +15,9 @@ body
 
 	/* set default font color */
 	color: #333333;
-
-	/* set default font to open sans, embeded from google fonts */
-	font-family: 'Open Sans', sans;
 }
 
+* { font-family: 'Open Sans', sans; } /* set default font to open sans, embeded from google fonts */
 a { font-family: inherit; color: #00705e; text-decoration: none; outline: none;} /* remove links decorations */
 
 button
@@ -45,12 +36,9 @@ button
 	background-color: #F8F8F8;
 
 	/* set font style */
-	font-family: 'Roboto', 'Open Sans', sans;
 	color: #333333;
 	text-transform: uppercase;
 }
-
-h1, h2, h3 { font-family: 'Roboto' !important; } /* title custom font */
 
 th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 
@@ -89,7 +77,6 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 	cursor: pointer;
 
 	/* font styles */
-	font-family: 'Roboto';
 	font-size: 0.95em;
 	color: #F8F8F8;
 	text-transform: uppercase;
@@ -152,29 +139,27 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 /* ========================================================================= */
 
 
-/*
 #bg_video
 {
-	/* set position to fixed, preventing scroll 
+	/* set position to fixed, preventing scroll */
 	position: fixed;
 
-	/* set index to -1, ensuring it'll be behind other elements 
+	/* set index to -1, ensuring it'll be behind other elements */
 	z-index: -1;
 
-	/* set default dimensions to auto, allowing it to resize the video if needed 
+	/* set default dimensions to auto, allowing it to resize the video if needed */
 	width: auto;
 	height: auto;
 
-	/* set minimum dimensions, allowing it to occupy full width and height even when viewport is bigger than video's dimension 
+	/* set minimum dimensions, allowing it to occupy full width and height even when viewport is bigger than video's dimension */
 	min-height: 100%;
 	min-width: 100%;
 
-	/* set the position to start cropping the video (i think 25% is more appropriate than 50%, thanks to video's content)
+	/* set the position to start cropping the video (i think 25% is more appropriate than 50%, thanks to video's content)*/
 	top: 25%;
 	left: 25%;
 	transform: translate(-25%,-25%);
 }
-*/
 
 #cover
 {
@@ -183,40 +168,13 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 
 	/* set width to full and height to (full minus header height) */
 	width: 100%;
-	/* height: calc(100% - 70px); */
-	height: auto;
+	height: calc(100% - 70px);
 
 	/* start content after header element, preventing overlap */
 	margin-top: 70px;
-
-	/* Livre Game Jam */
-	background: url('img/promo/stars.gif') repeat;
-	font-family: 'Upheav', sans-serif;
-	font-size: 1.75em;
-	color: #fc0;
 }
 
-/*
 #cover .cover_logo
-{
-	/* set position to relative, allowing using top attribute
-	position: relative;
-
-	/* centering horizontally
-	display: block;
-	margin: auto;
-
-	/* centering vertically
-	top: 50%;
-	transform: translateY(-50%);
-
-	/* set width
-	width: 50vmax;
-	max-width: 100%; /* prevents overflow-y in small devices
-}
-*/
-
-#cover .lgj_logo
 {
 	/* set position to relative, allowing using top attribute */
 	position: relative;
@@ -226,12 +184,14 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 	margin: auto;
 
 	/* centering vertically */
-	top: 100px;
+	top: 50%;
 	transform: translateY(-50%);
 
 	/* set width */
-	width: 25vmax;
+	width: 50vmax;
+	max-width: 100%; /* prevents overflow-y in small devices */
 }
+
 
 
 /* ======================================================================= */
@@ -244,7 +204,6 @@ th { font-weight: normal; vertical-align: middle;} /* table cell custom style */
 .title
 {
 	/* font styles */
-	font-family: 'Roboto';
 	font-size: 2em;
 	text-transform: uppercase;
 }

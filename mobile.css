@@ -1,6 +1,6 @@
 /* mobile overwrites! this is an !important document, huh? */
 
-@media (max-width:768px) /* code below will be used when device's width is less than 768px */
+@media (max-width: 980px) /* code below will be used when device's width is less than 768px */
 {
 	h1 { font-size: 1.8em; } /* shorten h1 font size a little */
 
@@ -24,42 +24,29 @@
 
 	.title { font-size: 1.8em; } /* shorten title size a little */
 
+	#header {height: 7.5% !important;}
+
 	#header #header_logo
 	{
 		/* horizontally aligning */
-		padding-left: 100% !important;
+		padding-left: 60% !important;
 		transform: translateX(-50%);
 	}
 
-	#header .nav_links { display: none; } /* hide navigation links */
+	#header .nav_links a { display: none;} /* hide navigation links */
+
+	/* events have to appear when mobile */
+	.nav_links .event
+	{
+		display: block !important;
+		position: absolute !important;
+		top: 25px !important;
+		left: 55% !important;
+	}
 
 	#about p { width: 85% !important; } /* increase about text width */
 
 	#wiki, #calendar, #media { padding: 10px 50px !important;} /* change padding for better readability */
 
 	#wiki img, #calendar img { display: none; } /* hide wiki and calendar images */
-
-	/* Livre Game Jam */
-	#cover .lgj_logo
-	{
-		top: 75px !important;
-		width: 75% !important;
-	}
-
-	#cover { font-size: 1.25em !important; }
-	#cover font { font-size: 1.25em !important; }
-
-	.lgj_table th
-	{
-		display: initial !important;
-		padding: initial !important;
-		padding-left: 7px !important;
-	}
-
-	.lgj_table img
-	{
-		width: 20% !important;
-		height: auto !important;
-		vertical-align: middle !important;
-	}
 }
