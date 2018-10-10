@@ -488,14 +488,14 @@ body
 .entidades a:hover { opacity: 0.7 }
 
 .entidades .base,.entidades .gamux,.entidades .livrecamp,.entidades .sancalug,.entidades .fog,.entidades .ic,
-.entidades .unicamp,.entidades .icmc
+.entidades .unicamp,.entidades .icmc, .javary
 {
 	display: block;
 	margin: auto auto
 }
 
 .entidades .base img,.entidades .gamux img,.entidades .livrecamp img,.entidades .sancalug img,.entidades .fog img,
-.entidades .ic img,.entidades .unicamp img,.entidades .icmc img
+.entidades .ic img,.entidades .unicamp img,.entidades .icmc img, .javary img
 {
 	width: 150px
 }
